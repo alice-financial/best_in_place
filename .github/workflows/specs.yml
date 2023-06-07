@@ -19,7 +19,16 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby-version: ['2.6.9', '2.7', '3.0']
+        gemfile:
+          - '5.2'
+          - '6.0'
+          - '6.1'
+    env:
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/rails_${{ matrix.gemfile }}.gemfile
     steps:
       - uses: actions/checkout@v3
       - name: Set up Ruby
