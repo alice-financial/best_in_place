@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-describe "JS behaviour", :js => true do
+describe "JS behaviour", js: true do
   before do
     @user = User.new :name => "Lucia",
       :last_name => "Napoli",

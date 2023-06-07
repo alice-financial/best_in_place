@@ -14,3 +14,4 @@ spec/internal/local
 coverage
 tmp
 failifier.txt
+.byebug_history
