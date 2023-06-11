@@ -11,20 +11,25 @@ gem "rspec-rails"
 gem "nokogiri"
 gem "combustion"
 gem "sprockets-rails"
-gem "capybara"
+if RUBY_VERSION < "2.6"
+  gem 'puma', '~> 5.6'
+  gem "capybara", '~> 3.35.0'
+elsif RUBY_VERSION < "2.7"
+  gem 'puma', '~> 5.6'
+  gem "capybara", '~> 3.36.0'
+else
+  gem 'puma'
+  gem "capybara"
+end
 gem "poltergeist"
 gem "sqlite3"
 gem "appraisal"
 gem "launchy"
-gem "rails", github: "rails/rails", branch: "6-0-stable"
+gem "phantomjs", require: "phantomjs/poltergeist"
+gem "rails", github: "rails/rails", branch: "6-1-stable"
 
 platforms :mri_21 do
   gem "byebug"
 end
-
-
-gem 'puma'
-gem 'phantomjs', :require => 'phantomjs/poltergeist'
-
 
 gemspec path: "../"
