@@ -1,3 +1,7 @@
+![specs](https://github.com/alice-financial/best_in_place/actions/workflows/specs.yml/badge.svg)
+
+Forked from https://github.com/bernat/best_in_place which is not actively maintained, adds rails 6 compatibility.
+
 # Best In Place
 
 **The Unobtrusive in Place editing solution**
