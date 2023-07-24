@@ -22,13 +22,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby-version: ['2.6.9', '2.7', '3.0']
+        ruby-version: ['2.7', '3.0']
         gemfile:
           - '6.0'
           - '6.1'
         include:
           - ruby-version: '2.5.3'
             gemfile: '5.2'
+          - ruby-version: '3.2'
+            gemfile: '7.0'
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/rails_${{ matrix.gemfile }}.gemfile
     steps:
